@@ -175,7 +175,6 @@ interface LCStore {
 ## 🎨 **User Interface Features**
 
 ### **Responsive Design**
-- **Mobile-First**: Optimized for all device sizes
 - **Dark Mode**: Built-in theme support
 - **Accessibility**: WCAG compliant components
 
@@ -245,30 +244,6 @@ Watch how data flows in real-time across all dashboards:
 
 ---
 
-## 🔍 **Current Features**
-
-### **✅ Implemented Features**
-- **Complete LC Lifecycle Management**
-- **Real-Time State Synchronization**
-- **Role-Based Dashboard Access**
-- **Document Upload & Management**
-- **Interactive Demo System**
-- **Session Data Persistence**
-- **Responsive UI Design**
-- **PDF Generation**
-- **ZIP Document Export**
-- **Blockchain Integration Simulation**
-- **Shipment Status Tracking**
-- **Notification System**
-
-### **🔄 Real-Time Capabilities**
-- **Instant Dashboard Updates**: Changes reflect immediately across all interfaces
-- **Live Status Changes**: LC status progression in real-time
-- **Synchronized Data**: All users see the same information simultaneously
-- **No Page Refresh**: Seamless user experience
-
----
-
 ## 🎯 **Use Cases**
 
 ### **Trade Finance Companies**
@@ -313,8 +288,8 @@ User Action → Store Update → State Change → All Subscribers Update → UI 
 ## 🔮 **Future Enhancements**
 
 ### **Planned Features**
-- **Real Blockchain Integration**: Connect to actual Avalanche network
-- **Multi-Currency Support**: Support for different currencies
+- **Real Blockchain Integration**: Connect to actual Avalanche Mainnet Network
+- **Multi-Currency Support**: Support for different currencies for payments
 - **Advanced Analytics**: Business intelligence and reporting
 - **API Integration**: Connect with external systems
 - **Mobile Application**: Native mobile app development
@@ -339,14 +314,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 📞 **Support & Contact**
-
-- **Documentation**: Check the [Implementation Guide](./IMPLEMENTATION_GUIDE.md)
-- **Issues**: Report bugs on [GitHub Issues](https://github.com/your-repo/issues)
-- **Questions**: Open discussions for feature requests
-
----
-
 ## 🙏 **Acknowledgments**
 
 - **Next.js Team** for the amazing framework
@@ -358,6 +325,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ---
 
 <div align="center">
-  <p><strong>Built with ❤️ for the Trade Finance Community</strong></p>
+  <p><strong>Built with ❤️ from Enlighten</strong></p>
   <p>Experience the future of Letter of Credit management today!</p>
 </div>
