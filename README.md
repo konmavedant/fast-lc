@@ -1,260 +1,363 @@
-# Real-Time Document Upload System
+<div align="center">
+  <img src="public/fast-lc.png" alt="Fast LC Logo" width="200" height="200">
+  <h1>🚢 Fast LC - Letter of Credit Management System</h1>
+  <p><strong>Complete End-to-End Trade Finance Platform with Real-Time State Management</strong></p>
+  
+  [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+  [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+  [![Zustand](https://img.shields.io/badge/Zustand-4.4-purple?style=for-the-badge)](https://zustand-demo.pmnd.rs/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+</div>
 
-A decentralized document management system built on Avalanche blockchain with real-time upload capabilities and smart contract integration.
+---
 
-## Features
+## 🌟 **Platform Overview**
 
-- 🔐 **Wallet Integration**: MetaMask and Core Wallet support
-- 📄 **Document Management**: Upload, store, and manage documents on blockchain
-- ⚡ **Real-Time Updates**: Live status updates during upload process
-- 🚀 **Batch Upload**: Upload multiple documents in a single transaction
-- 🔒 **Smart Contract Security**: Built with OpenZeppelin security standards
-- 🌐 **Multi-Network Support**: Avalanche Mainnet and Fuji Testnet
-- 📱 **Modern UI**: Beautiful, responsive interface built with React and Tailwind CSS
+**Fast LC** is a comprehensive **Letter of Credit Management System** that streamlines the entire trade finance workflow from LC creation to shipment completion. Built with modern web technologies, it provides real-time collaboration across all stakeholders with instant state synchronization.
 
-## Smart Contract Features
+### ✨ **Key Features**
+- 🔄 **Real-Time State Management** - Instant updates across all dashboards
+- 👥 **Role-Based Access Control** - Separate interfaces for each stakeholder
+- 📄 **Complete LC Lifecycle** - From creation to shipment completion
+- 📁 **Document Management** - Upload, categorize, and track trade documents
+- 🚀 **Interactive Demo System** - End-to-end workflow demonstration
+- 💾 **Session Persistence** - Data maintained across browser sessions
 
-- **Document Storage**: Store document metadata and hashes on blockchain
-- **Batch Operations**: Upload multiple documents efficiently
-- **Access Control**: Secure document management with ownership controls
-- **Event Logging**: Comprehensive event tracking for all operations
-- **Gas Optimization**: Efficient storage and retrieval operations
+---
 
-## Prerequisites
+## 🏗️ **System Architecture**
 
+### **User Roles & Dashboards**
+- **🛒 Importer Dashboard** - Create and manage Letters of Credit
+- **📤 Exporter Dashboard** - Submit required trade documents
+- **👨‍💼 Admin Dashboard** - Review, approve, and push to blockchain
+- **🚚 Shipment Dashboard** - Track logistics and update shipment status
+
+### **Technology Stack**
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **State Management**: Zustand with localStorage persistence
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **File Handling**: jsPDF, JSZip, File-Saver
+- **Icons**: Lucide React icon library
+
+---
+
+## 🚀 **Quick Start**
+
+### **Prerequisites**
 - Node.js 18+ and npm/yarn
-- MetaMask or Core Wallet browser extension
-- AVAX tokens for gas fees (testnet or mainnet)
+- Modern web browser with localStorage support
 
-## Installation
+### **Installation**
+```bash
+# Clone the repository
+git clone <repository-url>
+cd fast-lc
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd fast-lc
-   ```
+# Install dependencies
+npm install
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+# Start development server
+npm run dev
+```
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   ```
-   
-   Update `.env.local` with your configuration:
-   ```env
-   NEXT_PUBLIC_AVALANCHE_MAINNET_RPC=https://api.avax.network/ext/bc/C/rpc
-   NEXT_PUBLIC_AVALANCHE_FUJI_RPC=https://api.avax-test.network/ext/bc/C/rpc
-   NEXT_PUBLIC_MAINNET_CONTRACT_ADDRESS=YOUR_MAINNET_CONTRACT_ADDRESS
-   NEXT_PUBLIC_TESTNET_CONTRACT_ADDRESS=YOUR_TESTNET_CONTRACT_ADDRESS
-   ```
+### **Access the Platform**
+- **Main Application**: [http://localhost:3000](http://localhost:3000)
+- **Interactive Demo**: [http://localhost:3000/demo](http://localhost:3000/demo)
+- **Importer Dashboard**: [http://localhost:3000/importer-dashboard](http://localhost:3000/importer-dashboard)
+- **Exporter Dashboard**: [http://localhost:3000/exporter-dashboard](http://localhost:3000/exporter-dashboard)
+- **Admin Dashboard**: [http://localhost:3000/admin-dashboard](http://localhost:3000/admin-dashboard)
+- **Shipment Dashboard**: [http://localhost:3000/shipment-dashboard](http://localhost:3000/shipment-dashboard)
 
-4. **Deploy Smart Contract**
-   - Follow the [Deployment Guide](./DEPLOYMENT_GUIDE.md)
-   - Update contract addresses in `contract-interface.ts`
+---
 
-5. **Run the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+## 🔄 **Complete LC Workflow**
 
-6. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+### **1. LC Creation (Importer)**
+```
+📝 Fill LC Form → 📄 Generate PDF Draft → ✅ Status: "CREATED"
+```
+- Comprehensive LC form with validation
+- Automatic PDF generation
+- Real-time status updates
 
-## Smart Contract Deployment
+### **2. Document Submission (Exporter)**
+```
+📁 Upload Documents → 🏷️ Categorize Files → 📤 Submit for Review → ✅ Status: "AWAITING_ADMIN_REVIEW"
+```
+- Drag & drop file upload
+- Document type categorization
+- File validation and preview
 
-### Using Remix IDE
+### **3. Admin Review & Approval**
+```
+👀 Review Documents → ✅ Approve LC → ⛓️ Push to Blockchain → ✅ Status: "ONCHAIN"
+```
+- Document review interface
+- LC approval workflow
+- Blockchain integration simulation
+- ZIP download of all documents
 
-1. Open [Remix IDE](https://remix.ethereum.org/)
-2. Create new file `DocumentStorage.sol`
-3. Copy the contract code from `contracts/DocumentStorage.sol`
-4. Install OpenZeppelin dependencies
-5. Compile and deploy to Avalanche network
+### **4. Shipment Management**
+```
+🚚 Initiate Shipment → 📦 Track Progress → 🎯 Complete Delivery → ✅ Status: "SHIPMENT_COMPLETED"
+```
+- Shipment status updates
+- Progress tracking with timestamps
+- Real-time notifications
 
-### Contract Addresses
+---
 
-After deployment, update the addresses in `components/admin-dashboard/contract-interface.ts`:
+## 🎯 **Interactive Demo System**
 
+Experience the complete LC lifecycle with our **Interactive Demo System**:
+
+- **Step-by-Step Flow**: Automated demonstration of all workflow stages
+- **Real-Time Progress**: Visual tracking through each step
+- **Dashboard Access**: Direct links to all user interfaces
+- **State Monitoring**: Live view of application state changes
+
+**Start the Demo**: Navigate to `/demo` and click "Start Demo" to see the complete flow in action!
+
+---
+
+## 🏛️ **State Management Architecture**
+
+### **Centralized Zustand Store**
 ```typescript
-export const CONTRACT_ADDRESSES = {
-  43114: "YOUR_MAINNET_CONTRACT_ADDRESS",    // Avalanche Mainnet
-  43113: "YOUR_TESTNET_CONTRACT_ADDRESS",    // Avalanche Fuji Testnet
-  1337: "YOUR_LOCAL_CONTRACT_ADDRESS",       // Local Development
+interface LCStore {
+  // State
+  lcs: LC[]
+  notifications: Notification[]
+  currentUser: string
+  userRole: 'IMPORTER' | 'EXPORTER' | 'ADMIN' | 'SHIPMENT_PROVIDER'
+  
+  // Actions
+  createLC: (formData: LCFormData, userId: string) => LC
+  submitExporterDocs: (lcId: string, documents: Document[], userId: string) => void
+  approveLC: (lcId: string, adminId: string, onchainData: OnchainData) => void
+  updateShipmentStatus: (lcId: string, status: ShipmentStatus['status'], provider: string, notes?: string) => void
 }
 ```
 
-## Usage
+### **Real-Time Synchronization**
+- **Single Source of Truth**: All data flows through Zustand store
+- **Instant Updates**: Changes reflect immediately across all dashboards
+- **Session Persistence**: Data maintained in localStorage
+- **No Page Refresh**: Seamless user experience
 
-### 1. Connect Wallet
-- Click "Connect Wallet" button
-- Approve MetaMask/Core Wallet connection
-- Ensure you're on Avalanche network
+---
 
-### 2. Select Documents
-- Choose files to upload (PDF, JPG, DOCX supported)
-- Review file details and sizes
-- Remove unwanted files if needed
+## 📁 **Document Management System**
 
-### 3. Upload to Blockchain
-- Click "Upload Documents On-Chain"
-- Confirm transaction in wallet
-- Monitor real-time upload progress
-- View transaction details and explorer links
-
-### 4. Track Documents
-- View upload status for each document
-- Access transaction hashes and block information
-- Navigate to blockchain explorer for verification
-
-## Network Configuration
-
-### Avalanche Mainnet (Chain ID: 43114)
-- **RPC URL**: https://api.avax.network/ext/bc/C/rpc
-- **Block Explorer**: https://snowtrace.io/
-- **Currency**: AVAX
-
-### Avalanche Fuji Testnet (Chain ID: 43113)
-- **RPC URL**: https://api.avax-test.network/ext/bc/C/rpc
-- **Block Explorer**: https://testnet.snowtrace.io/
-- **Currency**: AVAX (testnet tokens)
-
-## Gas Costs
-
-### Estimated Gas Usage
-- **Single Document**: 80,000 - 120,000 gas
-- **Batch Upload (5 docs)**: 200,000 - 300,000 gas
-- **Document Retrieval**: 25,000 gas (read operation)
-
-### Cost Calculation
-```
-Gas Cost = Gas Used × Gas Price
-Example: 100,000 × 25 Gwei = 0.0025 AVAX
-```
-
-## Security Features
-
-- **Reentrancy Protection**: Prevents reentrancy attacks
-- **Access Control**: Only document owners can modify their documents
-- **Input Validation**: Comprehensive validation of all inputs
-- **Event Logging**: Full audit trail of all operations
-- **Ownership Controls**: Secure contract administration
-
-## File Support
-
-### Supported Formats
+### **Supported File Types**
 - **Documents**: PDF, DOCX, TXT
 - **Images**: JPG, JPEG, PNG
-- **Archives**: ZIP, RAR (with size limits)
+- **Size Limits**: Up to 10MB per file
 
-### File Size Limits
-- **Individual File**: Up to 10MB
-- **Batch Upload**: Up to 50MB total
-- **Hash Generation**: SHA-256 for file integrity
+### **Document Categories**
+- Commercial Invoice
+- Bill of Lading
+- Airway Bill
+- Insurance Certificate
+- Packing List
+- Certificate of Origin
 
-## Development
+### **Features**
+- **Drag & Drop Upload**: Modern file handling interface
+- **Type Categorization**: Automatic document type assignment
+- **ZIP Export**: Bulk download of all documents
+- **File Validation**: Size and format checking
 
-### Project Structure
+---
+
+## 🎨 **User Interface Features**
+
+### **Responsive Design**
+- **Mobile-First**: Optimized for all device sizes
+- **Dark Mode**: Built-in theme support
+- **Accessibility**: WCAG compliant components
+
+### **Interactive Elements**
+- **Real-Time Tables**: Live data updates
+- **Status Indicators**: Color-coded status badges
+- **Progress Tracking**: Visual workflow progression
+- **Toast Notifications**: User feedback system
+
+---
+
+## 🔧 **Development & Customization**
+
+### **Project Structure**
 ```
 fast-lc/
-├── components/
-│   └── admin-dashboard/
-│       ├── on-chain-data.tsx      # Main upload component
-│       └── contract-interface.ts  # Smart contract integration
-├── contracts/
-│   └── DocumentStorage.sol        # Smart contract
-├── public/                        # Static assets
-└── styles/                        # CSS and styling
+├── app/                           # Next.js 14 app router
+│   ├── demo/                     # Interactive demo system
+│   ├── importer-dashboard/       # Importer interface
+│   ├── exporter-dashboard/       # Exporter interface
+│   ├── admin-dashboard/          # Admin interface
+│   └── shipment-dashboard/       # Shipment interface
+├── components/                    # React components
+│   ├── ui/                       # Shared UI components
+│   ├── importer-dashboard/       # Importer components
+│   ├── exporter-dashboard/       # Exporter components
+│   ├── admin-dashboard/          # Admin components
+│   └── shipment-dashboard/       # Shipment components
+├── lib/                          # Utilities and store
+│   └── store.ts                  # Zustand store implementation
+├── hooks/                        # Custom React hooks
+├── types/                        # TypeScript type definitions
+└── public/                       # Static assets
 ```
 
-### Key Components
+### **Key Components**
+- **LC Form**: Comprehensive Letter of Credit creation
+- **Document Upload**: Multi-file upload with categorization
+- **Admin Review**: Document review and approval interface
+- **Shipment Tracking**: Logistics management and status updates
 
-- **OnChainData**: Main document upload interface
-- **ContractInterface**: Smart contract ABI and configuration
-- **DocumentStorage**: Solidity smart contract
-- **Wallet Integration**: MetaMask and Core Wallet support
+---
 
-### Technologies Used
+## 🚀 **Getting Started Guide**
 
-- **Frontend**: React 18, TypeScript, Tailwind CSS
-- **Blockchain**: Ethereum/Avalanche, ethers.js
-- **Smart Contracts**: Solidity, OpenZeppelin
-- **Build Tool**: Next.js 14
+### **1. Explore the Demo**
+Start with the interactive demo to understand the complete workflow:
+```bash
+npm run dev
+# Navigate to /demo
+# Click "Start Demo" to see the full flow
+```
 
-## Testing
+### **2. Test Different Roles**
+Experience each dashboard from different user perspectives:
+- **Importer**: Create new LCs and manage existing ones
+- **Exporter**: Upload documents for pending LCs
+- **Admin**: Review and approve submitted documents
+- **Shipment Provider**: Track and update shipment status
 
-### Test Network
-- Use Avalanche Fuji testnet for development
-- Get testnet AVAX from [Avalanche Faucet](https://faucet.avax.network/)
+### **3. Understand State Flow**
+Watch how data flows in real-time across all dashboards:
+- Create an LC as an importer
+- Switch to exporter dashboard to see the new LC
+- Submit documents and watch admin dashboard update
+- Approve LC and see shipment dashboard notification
 
-### Contract Testing
-1. Deploy to testnet first
-2. Test all functions with small files
-3. Verify event emissions
-4. Check gas optimization
+---
 
-## Troubleshooting
+## 🔍 **Current Features**
 
-### Common Issues
+### **✅ Implemented Features**
+- **Complete LC Lifecycle Management**
+- **Real-Time State Synchronization**
+- **Role-Based Dashboard Access**
+- **Document Upload & Management**
+- **Interactive Demo System**
+- **Session Data Persistence**
+- **Responsive UI Design**
+- **PDF Generation**
+- **ZIP Document Export**
+- **Blockchain Integration Simulation**
+- **Shipment Status Tracking**
+- **Notification System**
 
-1. **Wallet Connection Failed**
-   - Ensure MetaMask/Core Wallet is installed
-   - Check network configuration
-   - Refresh page and retry
+### **🔄 Real-Time Capabilities**
+- **Instant Dashboard Updates**: Changes reflect immediately across all interfaces
+- **Live Status Changes**: LC status progression in real-time
+- **Synchronized Data**: All users see the same information simultaneously
+- **No Page Refresh**: Seamless user experience
 
-2. **Transaction Failed**
-   - Verify sufficient AVAX balance
-   - Check gas limits
-   - Ensure correct network selection
+---
 
-3. **Contract Not Found**
-   - Update contract addresses
-   - Verify network compatibility
-   - Check contract deployment status
+## 🎯 **Use Cases**
 
-### Error Messages
+### **Trade Finance Companies**
+- Streamline LC creation and management
+- Track document submission progress
+- Monitor approval workflows
+- Manage shipment logistics
 
-- **"Contract not deployed on network"**: Update contract addresses
-- **"Insufficient funds"**: Add more AVAX to wallet
-- **"User rejected transaction"**: Check wallet permissions
+### **Import/Export Businesses**
+- Create and manage LCs efficiently
+- Submit required documents
+- Track approval status
+- Monitor shipment progress
 
-## Contributing
+### **Financial Institutions**
+- Review and approve LCs
+- Manage document verification
+- Track blockchain integration
+- Monitor compliance
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+---
 
-## License
+## 🛠️ **Technical Implementation**
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### **State Management Pattern**
+```
+Component → useLCStore() → Zustand Store → localStorage → Component Re-render
+```
 
-## Support
+### **Data Flow Architecture**
+```
+User Action → Store Update → State Change → All Subscribers Update → UI Refresh
+```
 
-For support and questions:
-- Check the [Deployment Guide](./DEPLOYMENT_GUIDE.md)
-- Review Avalanche documentation
-- Open an issue on GitHub
+### **Performance Optimizations**
+- **Selective Re-renders**: Components only update when relevant state changes
+- **Efficient Updates**: Minimal state mutations
+- **Memory Management**: Automatic cleanup of unused state
 
-## Roadmap
+---
 
-- [ ] IPFS integration for file storage
-- [ ] Advanced document encryption
-- [ ] Multi-signature document approval
-- [ ] Document versioning and history
-- [ ] API endpoints for external integration
-- [ ] Mobile app development
+## 🔮 **Future Enhancements**
 
-## Acknowledgments
+### **Planned Features**
+- **Real Blockchain Integration**: Connect to actual Avalanche network
+- **Multi-Currency Support**: Support for different currencies
+- **Advanced Analytics**: Business intelligence and reporting
+- **API Integration**: Connect with external systems
+- **Mobile Application**: Native mobile app development
 
-- [Avalanche](https://www.avax.network/) for blockchain infrastructure
-- [OpenZeppelin](https://openzeppelin.com/) for security libraries
-- [Remix IDE](https://remix.ethereum.org/) for smart contract development
-- [Ethers.js](https://docs.ethers.io/) for blockchain interaction
+---
+
+## 🤝 **Contributing**
+
+We welcome contributions! Please see our contributing guidelines:
+
+1. **Fork** the repository
+2. **Create** a feature branch
+3. **Make** your changes
+4. **Test** thoroughly
+5. **Submit** a pull request
+
+---
+
+## 📄 **License**
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📞 **Support & Contact**
+
+- **Documentation**: Check the [Implementation Guide](./IMPLEMENTATION_GUIDE.md)
+- **Issues**: Report bugs on [GitHub Issues](https://github.com/your-repo/issues)
+- **Questions**: Open discussions for feature requests
+
+---
+
+## 🙏 **Acknowledgments**
+
+- **Next.js Team** for the amazing framework
+- **Zustand** for lightweight state management
+- **shadcn/ui** for beautiful components
+- **Tailwind CSS** for utility-first styling
+- **Lucide** for beautiful icons
+
+---
+
+<div align="center">
+  <p><strong>Built with ❤️ for the Trade Finance Community</strong></p>
+  <p>Experience the future of Letter of Credit management today!</p>
+</div>
