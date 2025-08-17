@@ -64,7 +64,6 @@ npm run dev
 
 ### **Access the Platform**
 - **Main Application**: [http://localhost:3000](http://localhost:3000)
-- **Interactive Demo**: [http://localhost:3000/demo](http://localhost:3000/demo)
 - **Importer Dashboard**: [http://localhost:3000/importer-dashboard](http://localhost:3000/importer-dashboard)
 - **Exporter Dashboard**: [http://localhost:3000/exporter-dashboard](http://localhost:3000/exporter-dashboard)
 - **Admin Dashboard**: [http://localhost:3000/admin-dashboard](http://localhost:3000/admin-dashboard)
