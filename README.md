@@ -1,7 +1,7 @@
 <div align="center">
   <img src="public/fast-lc.png" alt="Fast LC Logo" width="200" height="200">
   <h1>🚢 Fast LC - Letter of Credit Management System</h1>
-  <p><strong>Complete End-to-End Trade Finance Platform with Real-Time State Management</strong></p>
+  <p><strong>Complete End-to-End Trade Finance Platform using Avalanche Blockchain</strong></p>
   
   [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
   [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
